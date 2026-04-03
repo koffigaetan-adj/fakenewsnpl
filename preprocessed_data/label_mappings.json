@@ -1,0 +1,13 @@
+{
+  "label_to_id": {
+    "False": 0,
+    "Nuanced": 1,
+    "True": 2
+  },
+  "id_to_label": {
+    "0": "False",
+    "1": "Nuanced",
+    "2": "True"
+  },
+  "max_length": 128
+}
