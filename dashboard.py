@@ -302,8 +302,8 @@ DATA_PATHS = [
      r"C:\Users\gerau\Documents\truthscope\kof_project\data\test.tsv"),
 ]
 WELFAKE_PATHS = [
-    "data/external/WELFake_Dataset.csv",
-    r"C:\Users\gerau\Downloads\Pro\data\external\WELFake_Dataset.csv",
+    "data/external/WELFake_sample.csv",
+    r"C:\Users\gerau\Downloads\Pro\data\external\WELFake_sample.csv",
 ]
 
 @st.cache_data(show_spinner=False)
@@ -384,7 +384,7 @@ if data_ok:
 with st.sidebar:
     st.markdown(f"""
     <div style='text-align:center; padding:16px 0 8px;'>
-      <h1 style='color:#818cf8;font-size:22px;font-weight:800;letter-spacing:-.02em;margin:8px 0 2px;'>TruthScope</h1>
+      <h1 style='color:#865DF5;font-size:22px;font-weight:800;letter-spacing:-.02em;margin:8px 0 2px;'>TruthScope</h1>
       <p style='color:#4a5568;font-size:11px;margin:0;'>Fake News Detection · NLP</p>
     </div>
     """, unsafe_allow_html=True)
@@ -1608,12 +1608,12 @@ elif page == "Demo Live":
         else:  # WELFake
             st.markdown("""
             <div class='alert-info'><p>
-            Chargement d'un échantillon aléatoire depuis <b>WELFake_Dataset.csv</b>.
+            Chargement d'un échantillon aléatoire depuis <b>WELFake_sample.csv</b> (version allégée pour le cloud).
             Les articles sont longs (~540 mots) — le modèle (entraîné sur LIAR ~18 mots) peut se tromper davantage.
             </p></div>""", unsafe_allow_html=True)
             wf = load_welfake_sample(500)
             if wf is None:
-                st.warning("WELFake non trouvé dans `data/external/WELFake_Dataset.csv`.")
+                st.warning("Echantillon WELFake non trouvé dans `data/external/WELFake_sample.csv`.")
                 user_text, source_label = "", None
             else:
                 wf_row = wf.sample(1, random_state=np.random.randint(0,999)).iloc[0]
