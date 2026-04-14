@@ -240,7 +240,23 @@ st.markdown("""
   }
   div[data-baseweb="popover"] li:hover { background:#1e1e3a !important; color:#fff !important; }
 
-  /* ---- Radio button selected text ---- */
+  /* ---- Radio button items (Navigation) ---- */
+  .stRadio > div[role="radiogroup"] > label {
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    margin-bottom: 4px !important;
+    border-left: 3px solid transparent !important;
+  }
+  .stRadio > div[role="radiogroup"] > label:hover {
+    background: rgba(99,102,241, 0.1) !important;
+    transform: translateX(3px) !important;
+  }
+  .stRadio > div[role="radiogroup"] > label:has(input:checked) {
+    background: linear-gradient(135deg, rgba(99,102,241, 0.15), rgba(139,92,246, 0.15)) !important;
+    border-left: 3px solid #818cf8 !important;
+  }
   .stRadio label:has(input:checked) span { color:#818cf8 !important; font-weight:700 !important; }
 
   hr { border-color:#1a1a2e !important; margin:1.5rem 0 !important; }
