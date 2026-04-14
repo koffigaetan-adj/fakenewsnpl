@@ -1,0 +1,7 @@
+model,mode,accuracy,f1_macro,f1_fake,f1_nuanced,f1_real,domain
+LR,3 classes,0.5375,0.5442,0.6465,0.4705,0.5156,in-domain (LIAR)
+RF,3 classes,0.5651,0.5697,0.6431,0.4874,0.5786,in-domain (LIAR)
+XGBoost,3 classes,0.5556,0.5577,0.6239,0.4824,0.5668,in-domain (LIAR)
+LR,2 classes,0.7899,0.7867,0.7608,,0.8126,in-domain (LIAR)
+RF,2 classes,0.7873,0.7837,0.7558,,0.8117,in-domain (LIAR)
+XGBoost,2 classes,0.7747,0.7723,0.7493,,0.7954,in-domain (LIAR)

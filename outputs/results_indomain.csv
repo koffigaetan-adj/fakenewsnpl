@@ -1,0 +1,5 @@
+model,accuracy,f1_macro,f1_weighted,f1_fake,f1_nuanced,f1_real
+RF — test set,0.5651,0.5697,0.5616,0.6431,0.4874,0.5786
+XGBoost — test set,0.5556,0.5577,0.5504,0.6239,0.4824,0.5668
+LR — test set,0.5375,0.5442,0.5338,0.6465,0.4705,0.5156
+DistilBERT fine-tuné — test set,0.4672,0.4526,0.4598,0.3667,0.4468,0.5444

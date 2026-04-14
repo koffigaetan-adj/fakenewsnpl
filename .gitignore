@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large external datasets (GitHub limit is 100MB)
+data/external/WELFake_Dataset.csv
+data/external/*.csv
+
+# Models (if any are saved locally)
+*.pkl
+*.h5
+*.model
+models/
+
+# Virtual environments
+venv/
+env/
+.env
+.venv/

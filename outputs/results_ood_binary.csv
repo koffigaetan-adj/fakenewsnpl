@@ -1,0 +1,9 @@
+model,accuracy,f1_macro,f1_fake,f1_real,domain,mode
+LR,0.7899,0.7867,0.7608,0.8126,in-domain (LIAR),binaire
+LR,0.5,0.3333,0.0,0.6667,out-of-domain (WELFake),binaire
+RF,0.7873,0.7837,0.7558,0.8117,in-domain (LIAR),binaire
+RF,0.5,0.3333,0.0,0.6667,out-of-domain (WELFake),binaire
+XGBoost,0.7747,0.7723,0.7493,0.7954,in-domain (LIAR),binaire
+XGBoost,0.5004,0.3344,0.002,0.6668,out-of-domain (WELFake),binaire
+RF texte seul,0.6291,0.6151,0.5415,0.6886,in-domain (LIAR),binaire
+RF texte seul,0.4683,0.4644,0.4185,0.5103,out-of-domain (WELFake),binaire
