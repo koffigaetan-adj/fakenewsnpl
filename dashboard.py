@@ -390,17 +390,20 @@ with st.sidebar:
     """, unsafe_allow_html=True)
     st.divider()
 
-    page = st.radio("Navigation", [
-        "Accueil",
-        "Exploration EDA",
-        "Preprocessing",
-        "Modèles Classiques",
-        "Features Améliorées",
-        "BERT",
-        "Binaire vs Multi-classe",
-        "Éval. Out-of-Domain",
-        "Demo Live",
-    ], label_visibility="collapsed")
+    PAGES = {
+        "⌂  Accueil": "Accueil",
+        "◧  Exploration EDA": "Exploration EDA",
+        "⚙  Preprocessing": "Preprocessing",
+        "⎔  Modèles Classiques": "Modèles Classiques",
+        "⌬  Features Améliorées": "Features Améliorées",
+        "❖  BERT": "BERT",
+        "⚖  Binaire vs Multi-classe": "Binaire vs Multi-classe",
+        "◍  Éval. Out-of-Domain": "Éval. Out-of-Domain",
+        "▶  Demo Live": "Demo Live"
+    }
+
+    selected_label = st.radio("Navigation", list(PAGES.keys()), label_visibility="collapsed")
+    page = PAGES[selected_label]
 
     st.divider()
     st.markdown("""
