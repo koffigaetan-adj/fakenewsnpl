@@ -384,7 +384,6 @@ if data_ok:
 with st.sidebar:
     st.markdown(f"""
     <div style='text-align:center; padding:16px 0 8px;'>
-      {icon("search", 38, "#6366f1")}
       <h1 style='color:#818cf8;font-size:22px;font-weight:800;letter-spacing:-.02em;margin:8px 0 2px;'>TruthScope</h1>
       <p style='color:#4a5568;font-size:11px;margin:0;'>Fake News Detection · NLP</p>
     </div>
@@ -445,14 +444,7 @@ if page == "Accueil":
             position:absolute;inset:0;border-radius:20px;
             background:linear-gradient(180deg, rgba(8,8,18,.55) 0%, rgba(8,8,18,.85) 100%);
           '></div>
-          <div style='position:relative;z-index:1;'>
-            <span class='badge' style='margin-bottom:20px;'>Epitech Digital School · 2026</span>
-            <h1 style='font-size:52px!important;margin:0;background:linear-gradient(135deg,#818cf8,#06b6d4);
-                       -webkit-background-clip:text;-webkit-text-fill-color:transparent;'>TruthScope</h1>
-            <p style='font-size:18px!important;color:#cbd5e1!important;margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto;'>
-              Détection automatique de fake news politiques par NLP — LIAR Dataset
-            </p>
-          </div>
+         
         </div>
         """, unsafe_allow_html=True)
     else:
