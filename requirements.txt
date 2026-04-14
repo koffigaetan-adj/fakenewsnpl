@@ -6,5 +6,4 @@ matplotlib
 plotly
 xgboost
 joblib
-transformers
-torch==2.0.0
+nltk
