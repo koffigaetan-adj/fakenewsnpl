@@ -518,61 +518,50 @@ if page == "À Propos":
         with open(PDF_PATH, "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
         pdf_b64 = _b64.b64encode(pdf_bytes).decode()
-        pdf_src = f"data:application/pdf;base64,{pdf_b64}"
+        # On utilise le service statique de Streamlit pour éviter le blocage Chrome sur le Base64
+        # Le fichier a été copié dans le dossier /static/ et enableStaticServing est activé.
+        pdf_static_url = "/static/consignes.pdf"
 
-        # Bouton télécharger natif Streamlit
-        col_card, col_dl = st.columns([6, 2])
-        with col_card:
-            st.markdown(f"""
-            <style>
-              #pdfcheck {{ position:absolute; opacity:0; pointer-events:none; width:0; height:0; }}
-              .pdf-viewer-area {{ display:none; margin-top:12px; }}
-              #pdfcheck:checked ~ .pdf-viewer-area {{ display:block; }}
-              .pdf-view-lbl {{
-                display:inline-flex; align-items:center; gap:6px;
-                background:rgba(99,102,241,0.12); color:#818cf8;
-                border:1px solid rgba(99,102,241,0.3);
-                padding:6px 13px; border-radius:8px;
-                font-size:12px; font-weight:700; cursor:pointer;
-                user-select:none; white-space:nowrap;
-              }}
-              .pdf-view-lbl:hover {{ background:rgba(99,102,241,0.22); }}
-            </style>
-            <div class='card' style='border-left:3px solid #6366f1; padding:14px 18px; position:relative;'>
-              <input type='checkbox' id='pdfcheck'>
-              <div style='display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;'>
-                <div style='display:flex; align-items:center; gap:11px;'>
-                  <div style='width:38px;height:38px;border-radius:9px;flex-shrink:0;
-                              background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2));
-                              border:1px solid rgba(99,102,241,0.3);
-                              display:flex;align-items:center;justify-content:center;'>
-                    {ico_html('file-text', 18, '#818cf8')}
-                  </div>
-                  <div>
-                    <p style='color:#fff;font-weight:700;font-size:14px;margin:0 0 2px;'>Consignes du Projet Spé 3</p>
-                    <p style='color:#64748b;font-size:11px;margin:0;'>
-                      Projet 3 — Fake News Detection &bull; Epitech Digital 2026
-                      &nbsp;<span style='color:#22c55e;font-weight:600;'>✓ PDF disponible</span>
-                    </p>
-                  </div>
-                </div>
-                <label for='pdfcheck' class='pdf-view-lbl'>👁️ Afficher le PDF</label>
-              </div>
-              <div class='pdf-viewer-area'>
-                <iframe src='{pdf_src}' width='100%' height='720px'
-                  style='border:none; display:block; border-radius:8px;'></iframe>
-              </div>
-            </div>
-            """, unsafe_allow_html=True)
-        with col_dl:
-            st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
-            st.download_button(
-                label="⬇ Télécharger",
-                data=pdf_bytes,
-                file_name="Projet3_FakeNews_Epitech.pdf",
-                mime="application/pdf",
-                use_container_width=True,
-            )
+        # On regroupe tout dans la même carte HTML pour une interface ultra-compacte
+        pdf_static_url = "/static/consignes.pdf"
+
+        html_content = f"""
+        <style>
+        #pdfcheck {{ position:absolute; opacity:0; pointer-events:none; width:0; height:0; }}
+        .pdf-viewer-area {{ display:none; margin-top:12px; }}
+        #pdfcheck:checked ~ .pdf-viewer-area {{ display:block; }}
+        .pdf-btn-group {{ display:flex; align-items:center; gap:8px; flex-shrink:0; }}
+        .pdf-action-btn {{ display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:8px; font-size:12px; font-weight:700; cursor:pointer; transition:all 0.2s; user-select:none; text-decoration:none !important; }}
+        .pdf-view-lbl {{ background:rgba(99,102,241,0.1); color:#818cf8; border:1px solid rgba(99,102,241,0.2); }}
+        .pdf-view-lbl:hover {{ background:rgba(99,102,241,0.2); border-color:#818cf8; }}
+        .pdf-dl-btn {{ background:linear-gradient(135deg, #6366f1, #8b5cf6); color:white !important; box-shadow: 0 2px 8px rgba(99,102,241,0.2); }}
+        .pdf-dl-btn:hover {{ transform:translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.4); opacity:0.95; }}
+        </style>
+        <div class='card' style='border-left:3px solid #6366f1; padding:15px 20px; position:relative;'>
+        <input type='checkbox' id='pdfcheck'>
+        <div style='display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;'>
+        <div style='display:flex; align-items:center; gap:12px;'>
+        <div style='width:38px;height:38px;border-radius:10px;flex-shrink:0; background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(139,92,246,0.15)); border:1px solid rgba(99,102,241,0.2); display:flex;align-items:center;justify-content:center;'>
+        {ico_html('file-text', 18, '#818cf8')}
+        </div>
+        <div>
+        <p style='color:#fff;font-weight:700;font-size:14px;margin:0 0 2px;'>Consignes du Projet Spé 3</p>
+        <p style='color:#64748b;font-size:11px;margin:0;'>Projet 3 — Fake News Detection &bull; Epitech Digital 2026 &nbsp;<span style='color:#22c55e;font-weight:600;'>✓ PDF disponible</span></p>
+        </div>
+        </div>
+        <div class='pdf-btn-group'>
+        <a href='{pdf_static_url}' download='Projet3_FakeNews_Epitech.pdf' class='pdf-action-btn pdf-dl-btn'>⬇ Télécharger</a>
+        <label for='pdfcheck' class='pdf-action-btn pdf-view-lbl'>👁️ Afficher le PDF</label>
+        </div>
+        </div>
+        <div class='pdf-viewer-area'>
+        <iframe src='{pdf_static_url}' width='100%' height='720px' style='border:none; display:block; border-radius:10px; background:white;'></iframe>
+        </div>
+        </div>
+        """
+        st.markdown(html_content, unsafe_allow_html=True)
+
+
     else:
         st.markdown("""
         <div class='card' style='border-left:3px solid #ef4444;padding:14px 18px;'>
