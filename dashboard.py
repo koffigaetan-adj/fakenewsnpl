@@ -96,7 +96,7 @@ st.markdown("""
     border-right: 1px solid #1a1a2e !important; min-width:230px !important;
   }
   [data-testid="stSidebar"] * { color:#e2e8f0 !important; }
-  [data-testid="stSidebar"] .stRadio label { font-size:13px !important; font-weight:500 !important; }
+  [data-testid="stSidebar"] .stRadio label { font-size:11px !important; font-weight:500 !important; }
   [data-testid="stSidebar"] hr { border-color:#1a1a2e !important; }
 
   /* ---- KPI Card ---- */
@@ -242,11 +242,11 @@ st.markdown("""
 
   /* ---- Radio button items (Navigation) ---- */
   .stRadio > div[role="radiogroup"] > label {
-    padding: 10px 14px !important;
-    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    border-radius: 7px !important;
     transition: all 0.2s ease !important;
     cursor: pointer !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 2px !important;
     border-left: 3px solid transparent !important;
   }
   .stRadio > div[role="radiogroup"] > label:hover {
@@ -401,21 +401,21 @@ with st.sidebar:
     st.markdown("""
 <div style='
     text-align: center;
-    padding: 20px 12px 16px;
+    padding: 10px 10px 10px;
     background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, rgba(8,8,18,0) 100%);
-    border-radius: 16px;
+    border-radius: 12px;
     border: 1px solid rgba(99,102,241,0.15);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 '>
-    <div style='display:flex;justify-content:center;margin-bottom:10px;'>
-        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div style='display:flex;justify-content:center;margin-bottom:6px;'>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="11" cy="11" r="7" stroke="#818cf8" stroke-width="2"/>
             <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="11" cy="11" r="3" fill="rgba(99,102,241,0.25)" stroke="#6366f1" stroke-width="1.5"/>
         </svg>
     </div>
     <div style='
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 800;
         letter-spacing: -0.03em;
         margin: 0;
@@ -426,9 +426,9 @@ with st.sidebar:
     '>TruthScope</div>
     <div style='
         color: #818cf8;
-        font-size: 9px;
+        font-size: 8px;
         font-weight: 700;
-        margin-top: 6px;
+        margin-top: 4px;
         text-transform: uppercase;
         letter-spacing: 0.12em;
     '>Fake News Detection &bull; NLP</div>
@@ -454,37 +454,34 @@ with st.sidebar:
 
     st.divider()
     st.markdown("""
-<div style='padding:0 6px 6px;'>
-    <p style='color:#6366f1;font-size:10px;font-weight:700;text-transform:uppercase;
-              letter-spacing:.09em;margin-bottom:10px;border-left:2px solid #6366f1;padding-left:7px;'>
+<div style='padding:0 4px 4px;'>
+    <p style='color:#6366f1;font-size:9px;font-weight:700;text-transform:uppercase;
+              letter-spacing:.09em;margin-bottom:6px;border-left:2px solid #6366f1;padding-left:6px;'>
         &nbsp;Équipe Projet
     </p>
-    <div style='display:flex;flex-direction:column;gap:5px;'>
-        <div style='display:flex;align-items:center;gap:7px;'>
-            <span style='width:6px;height:6px;border-radius:50%;background:#6366f1;flex-shrink:0;display:inline-block;'></span>
-            <span style='color:#c7d2fe;font-size:12px;font-weight:500;'>Melvyn CHARLES</span>
+    <div style='display:flex;flex-direction:column;gap:3px;'>
+        <div style='display:flex;align-items:center;gap:6px;'>
+            <span style='width:5px;height:5px;border-radius:50%;background:#6366f1;flex-shrink:0;display:inline-block;'></span>
+            <span style='color:#c7d2fe;font-size:10px;'>Melvyn CHARLES</span>
         </div>
-        <div style='display:flex;align-items:center;gap:7px;'>
-            <span style='width:6px;height:6px;border-radius:50%;background:#8b5cf6;flex-shrink:0;display:inline-block;'></span>
-            <span style='color:#c7d2fe;font-size:12px;font-weight:500;'>Koffi ADJAÏ</span>
+        <div style='display:flex;align-items:center;gap:6px;'>
+            <span style='width:5px;height:5px;border-radius:50%;background:#8b5cf6;flex-shrink:0;display:inline-block;'></span>
+            <span style='color:#c7d2fe;font-size:10px;'>Koffi ADJAÏ</span>
         </div>
-        <div style='display:flex;align-items:center;gap:7px;'>
-            <span style='width:6px;height:6px;border-radius:50%;background:#06b6d4;flex-shrink:0;display:inline-block;'></span>
-            <span style='color:#c7d2fe;font-size:12px;font-weight:500;'>FANAINGAMAMPIANDRA S. Jo</span>
+        <div style='display:flex;align-items:center;gap:6px;'>
+            <span style='width:5px;height:5px;border-radius:50%;background:#06b6d4;flex-shrink:0;display:inline-block;'></span>
+            <span style='color:#c7d2fe;font-size:10px;'>FANAINGAMAMPIANDRA S. Jo</span>
         </div>
-        <div style='display:flex;align-items:center;gap:7px;'>
-            <span style='width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;display:inline-block;'></span>
-            <span style='color:#c7d2fe;font-size:12px;font-weight:500;'>RAMANDIMBISOA Heliaritiana</span>
+        <div style='display:flex;align-items:center;gap:6px;'>
+            <span style='width:5px;height:5px;border-radius:50%;background:#22c55e;flex-shrink:0;display:inline-block;'></span>
+            <span style='color:#c7d2fe;font-size:10px;'>RAMANDIMBISOA Heliaritiana</span>
         </div>
-        <div style='display:flex;align-items:center;gap:7px;'>
-            <span style='width:6px;height:6px;border-radius:50%;background:#f59e0b;flex-shrink:0;display:inline-block;'></span>
-            <span style='color:#c7d2fe;font-size:12px;font-weight:500;'>Antoine BENECH</span>
+        <div style='display:flex;align-items:center;gap:6px;'>
+            <span style='width:5px;height:5px;border-radius:50%;background:#f59e0b;flex-shrink:0;display:inline-block;'></span>
+            <span style='color:#c7d2fe;font-size:10px;'>Antoine BENECH</span>
         </div>
     </div>
-    <div style='color:#64748b;font-size:10px;margin-top:12px;text-align:center;
-                border-top:1px solid #1a1a2e;padding-top:10px;'>
-        MSc Business & Technology Manager — Projet Spé 3 &bull; Epitech Digital 2026
-    </div>
+    <p style='color:#374151;font-size:9px;margin-top:6px;text-align:center;'>MSc B&TM — Spé 3 • Epitech 2026</p>
 </div>
 """, unsafe_allow_html=True)
     if not data_ok:
@@ -512,74 +509,117 @@ if page == "À Propos":
     </div>
     """, unsafe_allow_html=True)
 
-    # ---- Consignes du projet (PDF) ----
+    # ---- Consignes du projet (PDF) — CSS checkbox toggle ----
     PDF_PATH = "assets/Projet 3 - Fake news (1).pdf"
     pdf_exists = os.path.exists(PDF_PATH)
 
-    st.markdown(f"""
-    <div class='card' style='border-left:3px solid #6366f1;margin-bottom:18px;'>
-      <div style='display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;'>
-        <div style='display:flex;align-items:center;gap:12px;'>
-          <div style='width:44px;height:44px;border-radius:12px;
-                      background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2));
-                      border:1px solid rgba(99,102,241,0.3);
-                      display:flex;align-items:center;justify-content:center;flex-shrink:0;'>
-            {ico_html('file-text', 22, '#818cf8')}
-          </div>
-          <div>
-            <p style='color:#fff!important;font-weight:700;font-size:14px!important;margin:0 0 2px!important;'>
-              Consignes du Projet Spé 3
-            </p>
-            <p style='color:#64748b!important;font-size:12px!important;margin:0!important;'>
-              Projet 3 — Fake News Detection &bull; Epitech Digital 2026
-            </p>
-          </div>
-        </div>
-        <span class='badge' style='margin:0;'>{'✓ Fichier disponible' if pdf_exists else '✗ Fichier introuvable'}</span>
-      </div>
-    </div>
-    """, unsafe_allow_html=True)
-
     if pdf_exists:
+        import base64 as _b64
         with open(PDF_PATH, "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
+        pdf_b64 = _b64.b64encode(pdf_bytes).decode()
+        pdf_src = f"data:application/pdf;base64,{pdf_b64}"
 
-        col_dl, col_view, col_spacer = st.columns([1, 1, 3])
+        # Bouton télécharger natif Streamlit
+        col_card, col_dl = st.columns([6, 2])
+        with col_card:
+            st.markdown(f"""
+            <style>
+              #pdfcheck {{ position:absolute; opacity:0; pointer-events:none; width:0; height:0; }}
+              .pdf-viewer-area {{ display:none; margin-top:12px; }}
+              #pdfcheck:checked ~ .pdf-viewer-area {{ display:block; }}
+              .pdf-view-lbl {{
+                display:inline-flex; align-items:center; gap:6px;
+                background:rgba(99,102,241,0.12); color:#818cf8;
+                border:1px solid rgba(99,102,241,0.3);
+                padding:6px 13px; border-radius:8px;
+                font-size:12px; font-weight:700; cursor:pointer;
+                user-select:none; white-space:nowrap;
+              }}
+              .pdf-view-lbl:hover {{ background:rgba(99,102,241,0.22); }}
+            </style>
+            <div class='card' style='border-left:3px solid #6366f1; padding:14px 18px; position:relative;'>
+              <input type='checkbox' id='pdfcheck'>
+              <div style='display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;'>
+                <div style='display:flex; align-items:center; gap:11px;'>
+                  <div style='width:38px;height:38px;border-radius:9px;flex-shrink:0;
+                              background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2));
+                              border:1px solid rgba(99,102,241,0.3);
+                              display:flex;align-items:center;justify-content:center;'>
+                    {ico_html('file-text', 18, '#818cf8')}
+                  </div>
+                  <div>
+                    <p style='color:#fff;font-weight:700;font-size:14px;margin:0 0 2px;'>Consignes du Projet Spé 3</p>
+                    <p style='color:#64748b;font-size:11px;margin:0;'>
+                      Projet 3 — Fake News Detection &bull; Epitech Digital 2026
+                      &nbsp;<span style='color:#22c55e;font-weight:600;'>✓ PDF disponible</span>
+                    </p>
+                  </div>
+                </div>
+                <label for='pdfcheck' class='pdf-view-lbl'>👁️ Afficher le PDF</label>
+              </div>
+              <div class='pdf-viewer-area'>
+                <iframe src='{pdf_src}' width='100%' height='720px'
+                  style='border:none; display:block; border-radius:8px;'></iframe>
+              </div>
+            </div>
+            """, unsafe_allow_html=True)
         with col_dl:
+            st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
             st.download_button(
-                label="⬇ Télécharger les consignes",
+                label="⬇ Télécharger",
                 data=pdf_bytes,
                 file_name="Projet3_FakeNews_Epitech.pdf",
                 mime="application/pdf",
+                use_container_width=True,
             )
-        with col_view:
-            show_pdf = st.toggle("Afficher le PDF", value=False)
-
-        if show_pdf:
-            import base64 as _b64
-            pdf_b64 = _b64.b64encode(pdf_bytes).decode()
-            st.markdown(f"""
-            <div style='border:1px solid #1e1e3a;border-radius:14px;overflow:hidden;margin:12px 0 20px;'>
-              <div style='background:#111124;padding:10px 16px;border-bottom:1px solid #1e1e3a;
-                          display:flex;align-items:center;gap:8px;'>
-                {ico_html('file-text', 14, '#818cf8')}
-                <span style='color:#818cf8;font-size:12px;font-weight:600;'>Projet 3 — Fake News (Epitech Digital)</span>
-              </div>
-              <iframe
-                src="data:application/pdf;base64,{pdf_b64}"
-                width="100%"
-                height="750px"
-                style="border:none;display:block;background:#fff;"
-              ></iframe>
-            </div>
-            """, unsafe_allow_html=True)
     else:
         st.markdown("""
-        <div class='alert-warn'>
-          <p>Le fichier <code>assets/Projet 3 - Fake news (1).pdf</code> est introuvable.
-          Assurez-vous qu'il est bien placé dans le dossier <code>assets/</code> du projet.</p>
+        <div class='card' style='border-left:3px solid #ef4444;padding:14px 18px;'>
+          <p style='color:#fca5a5;font-size:13px;margin:0;'>
+            ✗ Fichier <code>assets/Projet 3 - Fake news (1).pdf</code> introuvable.
+          </p>
         </div>
         """, unsafe_allow_html=True)
+
+    st.divider()
+
+    # ---- Équipe (remontée en haut) ----
+    st.markdown(f"""
+    <div class='section-title'>
+      {ico_html('users', 22, '#818cf8')}
+      <div><h2 style='margin:0;'>L'Équipe Projet</h2></div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    team = [
+        ("Melvyn CHARLES",              "#6366f1", "M.C"),
+        ("Koffi ADJAÏ",                 "#8b5cf6", "K.A"),
+        ("FANAINGAMAMPIANDRA S. Jo",     "#06b6d4", "F.J"),
+        ("RAMANDIMBISOA Heliaritiana",   "#22c55e", "R.H"),
+        ("Antoine BENECH",              "#f59e0b", "A.B"),
+    ]
+    team_cols = st.columns(len(team))
+    for col, (name, color, initials) in zip(team_cols, team):
+        with col:
+            st.markdown(f"""
+            <div class='card' style='text-align:center;padding:18px 10px;border-top:3px solid {color};'>
+              <div style='width:44px;height:44px;border-radius:50%;
+                          background:rgba(99,102,241,0.08);
+                          border:2px solid {color};
+                          display:flex;align-items:center;justify-content:center;
+                          margin:0 auto 10px;font-weight:800;font-size:13px;color:{color};'>
+                {initials}
+              </div>
+              <p style='color:#fff!important;font-weight:700;font-size:12px!important;
+                        margin:0!important;
+                        text-decoration:underline;
+                        text-underline-offset:3px;
+                        text-decoration-color:{color};'>
+                {name}
+              </p>
+            </div>
+            """, unsafe_allow_html=True)
 
     st.divider()
 
@@ -605,25 +645,19 @@ if page == "À Propos":
             à ce défi en combinant des méthodes classiques de NLP avec des approches Deep Learning
             de pointe (BERT).
           </p>
-          <p>
-            Le dashboard TruthScope est conçu pour rendre transparente et interactive l'ensemble de la
-            démarche analytique : de l'exploration des données brutes à l'évaluation out-of-domain,
-            en passant par le preprocessing, la modélisation et la démo live.
-          </p>
         </div>
         """, unsafe_allow_html=True)
     with col2:
         st.markdown(f"""
         <div class='card'>
-          <span class='badge badge-cyan'>{ico_html('target', 12, '#67e8f9')} Objectifs Pédagogiques</span>
+          <span class='badge badge-cyan'>{ico_html('target', 12, '#67e8f9')} Objectifs</span>
           <h3>Compétences Mobilisées</h3>
-          <p>• <b style='color:#818cf8;'>NLP & Text Mining</b> — TF-IDF, vectorisation, nettoyage textuel avancé</p>
-          <p>• <b style='color:#818cf8;'>Machine Learning</b> — Régression Logistique, Random Forest, XGBoost</p>
-          <p>• <b style='color:#818cf8;'>Deep Learning</b> — Fine-tuning BERT (bert-base-uncased)</p>
-          <p>• <b style='color:#818cf8;'>Évaluation rigoureuse</b> — F1 macro, matrice de confusion, ROC-AUC</p>
-          <p>• <b style='color:#818cf8;'>Généralisation OOD</b> — Test sur WELFake (domaine différent)</p>
-          <p>• <b style='color:#818cf8;'>Data Visualisation</b> — Dashboard Streamlit premium interactif</p>
-          <p>• <b style='color:#818cf8;'>MLOps & Reproductibilité</b> — Pipelines, caching, modularité</p>
+          <p>• <b style='color:#818cf8;'>NLP & Text Mining</b> — TF-IDF, vectorisation</p>
+          <p>• <b style='color:#818cf8;'>Machine Learning</b> — LR, RF, XGBoost</p>
+          <p>• <b style='color:#818cf8;'>Deep Learning</b> — Fine-tuning BERT</p>
+          <p>• <b style='color:#818cf8;'>Évaluation</b> — F1 macro, ROC-AUC</p>
+          <p>• <b style='color:#818cf8;'>Généralisation OOD</b> — WELFake</p>
+          <p>• <b style='color:#818cf8;'>Data Viz</b> — Streamlit premium</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -652,39 +686,28 @@ if page == "À Propos":
          "LR binaire atteint 78.7% F1 macro — meilleure performance in-domain."),
         ("04", "trending-up", "Features Améliorées", "#22c55e",
          "Ajout des features métadonnées (credibility_score, lie_rate, history_total, is_politician). "
-         "Analyse de l'impact de chaque feature sur la performance. "
-         "Étude du déséquilibre de classes et de la correction class_weight='balanced'."),
+         "Analyse de l'impact de chaque feature sur la performance."),
         ("05", "brain", "BERT Fine-tuning", "#f59e0b",
-         "Fine-tuning du modèle bert-base-uncased sur LIAR. "
-         "Comparaison avec les modèles classiques. Analyse des embeddings contextuels "
+         "Fine-tuning du modèle bert-base-uncased sur LIAR. Analyse des embeddings contextuels "
          "et des limitations (longueur maximale 512 tokens, coût computationnel)."),
         ("06", "scale", "Binaire vs Multi-classe", "#ef4444",
-         "Comparaison systématique des configurations binaire (2 classes) et multi-classe (3 classes). "
          "La classification binaire surpasse la tri-classe de +23 pp F1 macro. "
          "Analyse des confusions entre classes adjacentes (barely-true vs half-true)."),
         ("07", "globe", "Éval. Out-of-Domain", "#818cf8",
-         "Test de généralisation sur WELFake (72 134 articles vrai/faux journalistiques). "
-         "Chute de performance de 45 pp pour les modèles utilisant les métadonnées speaker. "
-         "Les modèles TF-IDF purs se généralisent mieux (robustesse OOD)."),
+         "Test de généralisation sur WELFake (72 134 articles). "
+         "Chute de performance de 45 pp pour les modèles utilisant les métadonnées speaker."),
     ]
     cols_p = st.columns(2)
     for i, (num, ico, title, color, desc) in enumerate(pipeline_steps):
         with cols_p[i % 2]:
             st.markdown(f"""
-            <div class='card' style='border-left:3px solid {color};'>
-              <div style='display:flex;align-items:flex-start;gap:12px;'>
-                <div style='min-width:36px;height:36px;border-radius:10px;background:rgba(99,102,241,0.12);
-                            display:flex;align-items:center;justify-content:center;flex-shrink:0;'>
-                  {ico_html(ico, 18, color)}
-                </div>
+            <div class='card' style='border-left:3px solid {color};padding:12px 14px;'>
+              <div style='display:flex;align-items:flex-start;gap:10px;'>
+                <span style='color:{color};font-size:10px;font-weight:800;
+                             font-family:JetBrains Mono,monospace;min-width:28px;padding-top:2px;'>NB {num}</span>
                 <div>
-                  <div style='display:flex;align-items:center;gap:8px;margin-bottom:5px;'>
-                    <span style='color:{color};font-size:10px;font-weight:800;font-family:JetBrains Mono,monospace;'>
-                      NB {num}
-                    </span>
-                    <h3 style='margin:0!important;font-size:14px!important;'>{title}</h3>
-                  </div>
-                  <p style='font-size:12px!important;line-height:1.7!important;'>{desc}</p>
+                  <h3 style='margin:0 0 4px!important;font-size:13px!important;'>{title}</h3>
+                  <p style='font-size:11px!important;line-height:1.65!important;margin:0!important;'>{desc}</p>
                 </div>
               </div>
             </div>
@@ -692,69 +715,20 @@ if page == "À Propos":
 
     st.divider()
 
-    # ---- Dataset ----
+    # ---- Dataset KPIs ----
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown(f"""
-        <div class='kpi-card' style='--accent:linear-gradient(90deg,#6366f1,#8b5cf6);'>
-          <span class='kpi-icon'>{ico_html('database', 22, '#6366f1')}</span>
-          <span class='kpi-value'>LIAR</span>
-          <span class='kpi-label'>Dataset Principal</span>
-          <span class='kpi-sub'>Wang, ACL 2017 — PolitiFact</span>
-        </div>""", unsafe_allow_html=True)
+        st.markdown(f"""<div class='kpi-card'><span class='kpi-icon'>{ico_html('database', 22, '#6366f1')}</span>
+          <span class='kpi-value'>LIAR</span><span class='kpi-label'>Dataset Principal</span>
+          <span class='kpi-sub'>Wang, ACL 2017 — PolitiFact</span></div>""", unsafe_allow_html=True)
     with col2:
-        st.markdown(f"""
-        <div class='kpi-card' style='--accent:linear-gradient(90deg,#06b6d4,#0284c7);'>
-          <span class='kpi-icon'>{ico_html('globe', 22, '#06b6d4')}</span>
-          <span class='kpi-value'>WELFake</span>
-          <span class='kpi-label'>Dataset Out-of-Domain</span>
-          <span class='kpi-sub'>72 134 articles presse mondiale</span>
-        </div>""", unsafe_allow_html=True)
+        st.markdown(f"""<div class='kpi-card'><span class='kpi-icon'>{ico_html('globe', 22, '#06b6d4')}</span>
+          <span class='kpi-value'>WELFake</span><span class='kpi-label'>Dataset Out-of-Domain</span>
+          <span class='kpi-sub'>72 134 articles presse mondiale</span></div>""", unsafe_allow_html=True)
     with col3:
-        st.markdown(f"""
-        <div class='kpi-card' style='--accent:linear-gradient(90deg,#22c55e,#16a34a);'>
-          <span class='kpi-icon'>{ico_html('cpu', 22, '#22c55e')}</span>
-          <span class='kpi-value'>7</span>
-          <span class='kpi-label'>Notebooks couverts</span>
-          <span class='kpi-sub'>EDA → OOD — pipeline complet</span>
-        </div>""", unsafe_allow_html=True)
-
-    st.divider()
-
-    # ---- Équipe ----
-    st.markdown(f"""
-    <div class='section-title'>
-      {ico_html('users', 22, '#818cf8')}
-      <div><h2 style='margin:0;'>L'Équipe Projet</h2></div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    team = [
-        ("Melvyn CHARLES",       "#6366f1", "",   "M.C"),
-        ("Koffi ADJAÏ",          "#8b5cf6", "",       "K.A"),
-        ("FANAINGAMAMPIANDRA S. Jo","#06b6d4","",      "F.J"),
-        ("RAMANDIMBISOA Heliaritiana","#22c55e","",     "R.H"),
-        ("Antoine BENECH",       "#f59e0b", "",       "A.B"),
-    ]
-    team_cols = st.columns(len(team))
-    for col, (name, color, role, initials) in zip(team_cols, team):
-        with col:
-            st.markdown(f"""
-            <div class='card' style='text-align:center;padding:20px 12px;border-top:3px solid {color};'>
-              <div style='width:48px;height:48px;border-radius:50%;background:rgba(99,102,241,0.1);
-                          border:2px solid {color};display:flex;align-items:center;justify-content:center;
-                          margin:0 auto 12px;font-weight:800;font-size:14px;color:{color};'>
-                {initials}
-              </div>
-              <p style='color:#fff!important;font-weight:700;font-size:13px!important;margin:0 0 4px!important;
-                        text-decoration:underline;text-underline-offset:3px;text-decoration-color:{color};'>
-                {name}
-              </p>
-              <p style='color:#64748b!important;font-size:11px!important;line-height:1.55!important;margin:0!important;'>
-                {role}
-              </p>
-            </div>
-            """, unsafe_allow_html=True)
+        st.markdown(f"""<div class='kpi-card'><span class='kpi-icon'>{ico_html('cpu', 22, '#22c55e')}</span>
+          <span class='kpi-value'>7</span><span class='kpi-label'>Notebooks couverts</span>
+          <span class='kpi-sub'>EDA → OOD — pipeline complet</span></div>""", unsafe_allow_html=True)
 
     st.divider()
 
