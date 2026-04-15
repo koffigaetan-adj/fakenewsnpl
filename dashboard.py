@@ -794,14 +794,14 @@ if page == "Accueil":
         '>
           <div style='
             position:absolute;inset:0;border-radius:20px;
-            background:linear-gradient();
+            background:linear-gradient(180deg, rgba(8,8,18,.55) 0%, rgba(8,8,18,.85) 100%);
           '></div>
          
         </div>
         """, unsafe_allow_html=True)
     else:
         st.markdown(f"""
-        <div style='background:linear-gradient();
+        <div style='background:linear-gradient(135deg,#0f0f1e 0%,#18183a 50%,#0f0f1e 100%);
                     border:1px solid #1e1e3a;border-radius:20px;padding:48px;margin-bottom:28px;text-align:center;'>
           <span class='badge' style='margin-bottom:20px;'>Epitech Digital School · 2026</span>
           <h1 style='font-size:48px!important;margin:0;background:linear-gradient(135deg,#818cf8,#06b6d4);
