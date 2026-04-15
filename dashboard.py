@@ -522,8 +522,11 @@ if page == "À Propos":
         # Le fichier a été copié dans le dossier /static/ et enableStaticServing est activé.
         pdf_static_url = "/static/consignes.pdf"
 
-        # On regroupe tout dans la même carte HTML pour une interface ultra-compacte
-        pdf_static_url = "/static/consignes.pdf"
+        import base64 as _b64
+        with open(PDF_PATH, "rb") as pdf_file:
+            pdf_bytes = pdf_file.read()
+        pdf_b64 = _b64.b64encode(pdf_bytes).decode()
+        pdf_b64_uri = f"data:application/pdf;base64,{pdf_b64}"
 
         html_content = f"""
         <style>
@@ -550,12 +553,12 @@ if page == "À Propos":
         </div>
         </div>
         <div class='pdf-btn-group'>
-        <a href='{pdf_static_url}' download='Projet3_FakeNews_Epitech.pdf' class='pdf-action-btn pdf-dl-btn'>⬇ Télécharger</a>
+        <a href='{pdf_b64_uri}' download='Projet3_FakeNews_Epitech.pdf' class='pdf-action-btn pdf-dl-btn'>⬇ Télécharger</a>
         <label for='pdfcheck' class='pdf-action-btn pdf-view-lbl'>👁️ Afficher le PDF</label>
         </div>
         </div>
         <div class='pdf-viewer-area'>
-        <iframe src='{pdf_static_url}' width='100%' height='720px' style='border:none; display:block; border-radius:10px; background:white;'></iframe>
+        <embed src='{pdf_b64_uri}' type='application/pdf' width='100%' height='750px' style='border:none; display:block; border-radius:10px; background:white;' />
         </div>
         </div>
         """
@@ -791,14 +794,14 @@ if page == "Accueil":
         '>
           <div style='
             position:absolute;inset:0;border-radius:20px;
-            background:linear-gradient(180deg, rgba(8,8,18,.55) 0%, rgba(8,8,18,.85) 100%);
+            background:linear-gradient();
           '></div>
          
         </div>
         """, unsafe_allow_html=True)
     else:
         st.markdown(f"""
-        <div style='background:linear-gradient(135deg,#0f0f1e 0%,#18183a 50%,#0f0f1e 100%);
+        <div style='background:linear-gradient();
                     border:1px solid #1e1e3a;border-radius:20px;padding:48px;margin-bottom:28px;text-align:center;'>
           <span class='badge' style='margin-bottom:20px;'>Epitech Digital School · 2026</span>
           <h1 style='font-size:48px!important;margin:0;background:linear-gradient(135deg,#818cf8,#06b6d4);
