@@ -514,57 +514,58 @@ if page == "À Propos":
     pdf_exists = os.path.exists(PDF_PATH)
 
     if pdf_exists:
-        import base64 as _b64
         with open(PDF_PATH, "rb") as pdf_file:
             pdf_bytes = pdf_file.read()
-        pdf_b64 = _b64.b64encode(pdf_bytes).decode()
-        # On utilise le service statique de Streamlit pour éviter le blocage Chrome sur le Base64
-        # Le fichier a été copié dans le dossier /static/ et enableStaticServing est activé.
-        pdf_static_url = "/static/consignes.pdf"
 
-        import base64 as _b64
-        with open(PDF_PATH, "rb") as pdf_file:
-            pdf_bytes = pdf_file.read()
-        pdf_b64 = _b64.b64encode(pdf_bytes).decode()
-        pdf_b64_uri = f"data:application/pdf;base64,{pdf_b64}"
+        # Interface unifiée avec colonnes natives (Robuste sur le Cloud Streamlit)
+        col_info, col_dl, col_toggle = st.columns([5, 2, 2])
 
-        html_content = f"""
-        <style>
-        #pdfcheck {{ position:absolute; opacity:0; pointer-events:none; width:0; height:0; }}
-        .pdf-viewer-area {{ display:none; margin-top:12px; }}
-        #pdfcheck:checked ~ .pdf-viewer-area {{ display:block; }}
-        .pdf-btn-group {{ display:flex; align-items:center; gap:8px; flex-shrink:0; }}
-        .pdf-action-btn {{ display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:8px; font-size:12px; font-weight:700; cursor:pointer; transition:all 0.2s; user-select:none; text-decoration:none !important; }}
-        .pdf-view-lbl {{ background:rgba(99,102,241,0.1); color:#818cf8; border:1px solid rgba(99,102,241,0.2); }}
-        .pdf-view-lbl:hover {{ background:rgba(99,102,241,0.2); border-color:#818cf8; }}
-        .pdf-dl-btn {{ background:linear-gradient(135deg, #6366f1, #8b5cf6); color:white !important; box-shadow: 0 2px 8px rgba(99,102,241,0.2); }}
-        .pdf-dl-btn:hover {{ transform:translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.4); opacity:0.95; }}
-        </style>
-        <div class='card' style='border-left:3px solid #6366f1; padding:15px 20px; position:relative;'>
-        <input type='checkbox' id='pdfcheck'>
-        <div style='display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;'>
-        <div style='display:flex; align-items:center; gap:12px;'>
-        <div style='width:38px;height:38px;border-radius:10px;flex-shrink:0; background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(139,92,246,0.15)); border:1px solid rgba(99,102,241,0.2); display:flex;align-items:center;justify-content:center;'>
-        {ico_html('file-text', 18, '#818cf8')}
-        </div>
-        <div>
-        <p style='color:#fff;font-weight:700;font-size:14px;margin:0 0 2px;'>Consignes du Projet Spé 3</p>
-        <p style='color:#64748b;font-size:11px;margin:0;'>Projet 3 — Fake News Detection &bull; Epitech Digital 2026 &nbsp;<span style='color:#22c55e;font-weight:600;'>✓ PDF disponible</span></p>
-        </div>
-        </div>
-        <div class='pdf-btn-group'>
-        <a href='{pdf_b64_uri}' download='Projet3_FakeNews_Epitech.pdf' class='pdf-action-btn pdf-dl-btn'>⬇ Télécharger</a>
-        <label for='pdfcheck' class='pdf-action-btn pdf-view-lbl'>👁️ Afficher le PDF</label>
-        </div>
-        </div>
-        <div class='pdf-viewer-area'>
-        <embed src='{pdf_b64_uri}' type='application/pdf' width='100%' height='750px' style='border:none; display:block; border-radius:10px; background:white;' />
-        </div>
-        </div>
-        """
-        st.markdown(html_content, unsafe_allow_html=True)
+        with col_info:
+            st.markdown(f"""
+            <div class='card' style='border-left:3px solid #6366f1;margin:0;padding:12px 16px;'>
+              <div style='display:flex;align-items:center;gap:12px;'>
+                <div style='width:36px;height:36px;border-radius:10px;flex-shrink:0;
+                            background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.2));
+                            border:1px solid rgba(99,102,241,0.3);
+                            display:flex;align-items:center;justify-content:center;'>
+                  {ico_html('file-text', 16, '#818cf8')}
+                </div>
+                <div>
+                  <p style='color:#fff!important;font-weight:700;font-size:13px!important;margin:0 0 2px!important;'>
+                    Consignes du Projet Spé 3
+                  </p>
+                  <p style='color:#64748b!important;font-size:10px!important;margin:0!important;'>
+                    Projet 3 — Fake News Detection &bull; Epitech 2026 &bull; 
+                    <span style='color:#22c55e!important;font-weight:600;'>✓ PDF disponible</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            """, unsafe_allow_html=True)
 
+        with col_dl:
+            st.markdown("<div style='height:4px'></div>", unsafe_allow_html=True)
+            st.download_button(
+                label="⬇ Télécharger",
+                data=pdf_bytes,
+                file_name="Projet3_FakeNews_Epitech.pdf",
+                mime="application/pdf",
+                use_container_width=True,
+            )
 
+        with col_toggle:
+            st.markdown("<div style='height:4px'></div>", unsafe_allow_html=True)
+            show_pdf = st.toggle("👁 Afficher le PDF", value=False)
+
+        # Affichage natif via streamlit-pdf-viewer (Évite tous les blocages réseau du Cloud)
+        if show_pdf:
+            st.markdown("<div style='margin-top:12px;'></div>", unsafe_allow_html=True)
+            try:
+                from streamlit_pdf_viewer import pdf_viewer
+                # On utilise la librairie officielle pour esquiver la sécurité iframes
+                pdf_viewer(PDF_PATH, width=740)
+            except ImportError:
+                st.error("⚠️ Le module `streamlit-pdf-viewer` est requis pour l'affichage direct. Assurez-vous qu'il est bien dans votre `requirements.txt`.")
     else:
         st.markdown("""
         <div class='card' style='border-left:3px solid #ef4444;padding:14px 18px;'>
