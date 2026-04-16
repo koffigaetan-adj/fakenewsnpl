@@ -8,3 +8,8 @@ xgboost
 joblib
 nltk
 streamlit-pdf-viewer
+ipython
+shap
+scipy
+torch
+transformers
